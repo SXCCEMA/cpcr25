@@ -1,0 +1,357 @@
+/* ==========================================
+   CSS Reset
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   Body and Background
+========================================== */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0b1533;
+    color: #f4f4f4;
+    text-align: center;
+    line-height: 1.6;
+}
+
+body.body-backdrop {
+    background-image: url('bg3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+}
+
+/* ==========================================
+   Main Header
+========================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(11, 21, 51, 0.9);
+    color: #e7bc2d;
+    border-bottom: 4px solid #e7bc2d;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo-container img.logo {
+    width: 60px;
+    height: auto;
+}
+
+.logo-container img.logo2 {
+    width: 100px;
+    height: auto;
+}
+
+/* Central header text */
+.header-text {
+    flex: 1;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.header-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #e7bc2d;
+    margin: 5px 0;
+}
+
+.header-text p.subtitle {
+    font-family: 'Old Standard TT', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Responsive Header */
+@media (max-width: 992px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-text {
+        margin: 15px 0;
+    }
+    .logo-container {
+        margin: 5px 0;
+    }
+}
+
+/* ==========================================
+   Navbar
+========================================== */
+.navbar {
+    background-color: #0d203b;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
+}
+
+.navbar a {
+    display: block;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ffd300;
+    color: #0a1a2f;
+    border-radius: 5px;
+}
+
+/* ==========================================
+   Main Content Wrapper
+========================================== */
+.main-content {
+    padding-top: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   Intro Section
+========================================== */
+.intro {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: rgba(13, 13, 58, 0.85);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.intro h2 {
+    color: #e7bc2d;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   Date-Time-Venue Section
+========================================== */
+.dtv {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 3rem auto;
+    flex-wrap: wrap;
+}
+
+.dtv-card {
+    background: linear-gradient(145deg, #0e1f47, #162c61);
+    border: 2px solid #e7bc2d;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    color: #f4f4f4;
+    box-shadow: 0 0 15px rgba(231, 188, 45, 0.6);
+}
+
+/* ==========================================
+   Registration Section
+========================================== */
+.registration-info {
+    background-color: rgba(12, 12, 71, 0.9);
+    padding: 30px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+}
+
+.registration-info h2 {
+    color: #e7bc2d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   Buttons
+========================================== */
+.register-button {
+    display: inline-block;
+    background-color: #e7bc2d;
+    color: #0b1533;
+    padding: 12px 25px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #ffd24d;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(231, 188, 45, 0.5);
+}
+
+/* ==========================================
+   Cards Section
+========================================== */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 3rem auto;
+}
+
+.card {
+    background: #0d0d3a;
+    color: #f4f4f4;
+    border: 2px solid #e7bc2d;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card h3 {
+    color: #e7bc2d;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   Dropdown Button
+========================================== */
+.dropdown-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #e7bc2d;
+    border: 2px solid #e7bc2d;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    transform: rotate(10deg);
+    box-shadow: 0 4px 12px rgba(231, 188, 45, 0.5);
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #162c61;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin-top: 10px;
+    box-shadow: inset 0 0 10px rgba(231, 188, 45, 0.4);
+    transition: max-height 0.3s ease, padding 0.2s ease;
+}
+
+.dropdown-content.active {
+    max-height: 100px;
+    padding: 10px;
+}
+
+/* ==========================================
+   Speaker Grid
+========================================== */
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+
+.speaker-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.speaker-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Speaker Grid */
+@media (max-width: 992px) {
+    .speaker-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .speaker-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   Schedule Table
+========================================== */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #e7bc2d;
+    padding: 10px;
+}
+
+.schedule-table th {
+    background: #162c61;
+    color: #e7bc2d;
+}
+
+.schedule-table tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+/* ==========================================
+   Footer
+========================================== */
+footer {
+    padding: 25px;
+    background-color: rgba(25, 25, 112, 0.95);
+    color: #f4f4f4;
+    border-top: 3px solid #e7bc2d;
+    margin-top: 40px;
+}
+
+footer .credits {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dcdcdc;
+}
