@@ -29,6 +29,14 @@ body.body-backdrop {
 /* ==========================================
    Main Header
 ========================================== */
+/* ==========================================
+   Import Engravers Old English Font
+========================================== */
+@import url('https://db.onlinewebfonts.com/c/0e3722e1f3c3cf12ace46f16e3f735c7?family=Engravers+Old+English+MT+W01');
+
+/* ==========================================
+   Main Header
+========================================== */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -50,7 +58,7 @@ body.body-backdrop {
 }
 
 .logo-container img.logo2 {
-    width: 100px;
+    width: 120px;
     height: auto;
 }
 
@@ -59,6 +67,27 @@ body.body-backdrop {
     flex: 1;
     margin: 0 20px;
     text-align: center;
+}
+
+.header-text p.old-english-font {
+    font-family: 'Engravers Old English MT W01', serif;
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 5px 0;
+}
+
+.header-text p.dept-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.header-text p.presents {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
 }
 
 .header-text h1 {
@@ -74,21 +103,6 @@ body.body-backdrop {
     font-weight: 700;
     color: #fff;
 }
-
-/* Responsive Header */
-@media (max-width: 992px) {
-    .main-header {
-        flex-direction: column;
-        text-align: center;
-    }
-    .header-text {
-        margin: 15px 0;
-    }
-    .logo-container {
-        margin: 5px 0;
-    }
-}
-
 /* ==========================================
    Navbar
 ========================================== */
@@ -124,7 +138,7 @@ body.body-backdrop {
    Main Content Wrapper
 ========================================== */
 .main-content {
-    padding-top: 120px;
+    padding-top: 60px;
     max-width: 1200px;
     margin: 0 auto;
 }
