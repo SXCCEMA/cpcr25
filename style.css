@@ -1,371 +1,669 @@
-/* ==========================================
-   CSS Reset
-========================================== */
+:root {
+    --primary: #1a237e;
+    --secondary: #283593;
+    --accent: #3949ab;
+    --light: #e8eaf6;
+    --dark: #0d1440;
+    --text: #333;
+    --text-light: #f5f5f5;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --glow: 0 0 15px rgba(26, 35, 126, 0.3);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ==========================================
-   Body and Background
-========================================== */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0b1533;
-    color: #f4f4f4;
-    text-align: center;
     line-height: 1.6;
+    color: var(--text);
+    background-color: #f9f9f9;
+    background-image: linear-gradient(to bottom, #f0f4ff, #e6ebfa);
 }
 
-body.body-backdrop {
-    background-image: url('bg3.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-blend-mode: overlay;
+.body-backdrop::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0icmdiYSgyNiAzNSAxMjYgMC4xKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idHJhbnNwYXJlbnQiLz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+    opacity: 0.1;
+    z-index: -1;
 }
 
-/* ==========================================
-   Main Header
-========================================== */
-/* ==========================================
-   Import Engravers Old English Font
-========================================== */
-@import url('https://db.onlinewebfonts.com/c/0e3722e1f3c3cf12ace46f16e3f735c7?family=Engravers+Old+English+MT+W01');
-
-/* ==========================================
-   Main Header
-========================================== */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: rgba(11, 21, 51, 0.9);
-    color: #e7bc2d;
-    border-bottom: 4px solid #e7bc2d;
-    flex-wrap: wrap;
+    padding: 20px 5%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idHJhbnNwYXJlbnQiLz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+    opacity: 0.2;
 }
 
 .logo-container {
-    flex-shrink: 0;
+    flex: 0 0 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logo-container img.logo {
-    width: 60px;
-    height: auto;
+.logo {
+    max-width: auto;
+    height: 80px;
 }
 
-.logo-container img.logo2 {
-    width: 120px;
-    height: auto;
+.logo2 {
+    max-width: auto;
+    height: 150px;
 }
 
-/* Central header text */
 .header-text {
-    flex: 1;
-    margin: 0 20px;
     text-align: center;
+    flex: 1;
+    padding: 0 20px;
 }
 
-.header-text p.old-english-font {
+.old-english-font {
     font-family: 'Engravers Old English MT W01', serif;
-    font-size: 1.5rem;
-    color: #fff;
-    margin: 5px 0;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
 }
 
-.header-text p.dept-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
+.dept-text {
+    font-family: 'Old Standard TT', serif;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
 
-.header-text p.presents {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
+.presents {
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
 .header-text h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
-    color: #e7bc2d;
-    margin: 5px 0;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.header-text p.subtitle {
-    font-family: 'Old Standard TT', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
-}
-/* ==========================================
-   Navbar
-========================================== */
-.navbar {
-    background-color: #0d203b;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-    position: sticky;
-    top: 0;
-}
-
-.navbar a {
-    display: block;
-    color: #ecf0f1;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.navbar a:hover {
-    background-color: #ffd300;
-    color: #0a1a2f;
-    border-radius: 5px;
-}
-
-/* ==========================================
-   Main Content Wrapper
-========================================== */
-.main-content {
-    padding-top: 60px;
-    max-width: 1200px;
+.subtitle {
+    font-size: 1.1rem;
+    max-width: 600px;
     margin: 0 auto;
 }
 
-/* ==========================================
-   Intro Section
-========================================== */
-.intro {
-    max-width: 900px;
-    margin: 2rem auto;
-    background: rgba(13, 13, 58, 0.85);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+.navbar-wrapper {
+    background-color: var(--dark);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.intro h2 {
-    color: #e7bc2d;
-    margin-bottom: 15px;
-}
-
-/* ==========================================
-   Date-Time-Venue Section
-========================================== */
-.dtv {
+.navbar {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin: 3rem auto;
-    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.dtv-card {
-    background: linear-gradient(145deg, #0e1f47, #162c61);
-    border: 2px solid #e7bc2d;
-    border-radius: 12px;
-    padding: 20px;
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-    color: #f4f4f4;
-    box-shadow: 0 0 15px rgba(231, 188, 45, 0.6);
-}
-
-/* ==========================================
-   Registration Section
-========================================== */
-.registration-info {
-    background-color: rgba(12, 12, 71, 0.9);
-    padding: 30px;
-    margin: 2rem auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    max-width: 700px;
-}
-
-.registration-info h2 {
-    color: #e7bc2d;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-/* ==========================================
-   Buttons
-========================================== */
-.register-button {
-    display: inline-block;
-    background-color: #e7bc2d;
-    color: #0b1533;
-    padding: 12px 25px;
-    margin: 10px;
+.navbar a {
+    color: var(--text-light);
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.register-button:hover {
-    background-color: #ffd24d;
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(231, 188, 45, 0.5);
-}
-
-/* ==========================================
-   Cards Section
-========================================== */
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin: 3rem auto;
-}
-
-.card {
-    background: #0d0d3a;
-    color: #f4f4f4;
-    border: 2px solid #e7bc2d;
-    border-radius: 12px;
-    padding: 20px;
-    flex: 1;
-    min-width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
     position: relative;
 }
 
-.card h3 {
-    color: #e7bc2d;
+.navbar a:hover {
+    background-color: var(--accent);
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--light);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar a:hover::after {
+    width: 80%;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.navheading {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.navheading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    border-radius: 2px;
+}
+
+.intro {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.3;
+    border-radius: 15px;
+}
+
+.intro h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--light);
+    padding-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.dtv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.dtv-card {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    max-width: auto;
+    width: 100%;
+}
+
+.dtv-card p {
     margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+.dtv-card b {
+    font-size: 1.3rem;
 }
 
-/* ==========================================
-   Dropdown Button
-========================================== */
-.dropdown-btn {
-    display: inline-block;
-    background-color: transparent;
-    color: #e7bc2d;
-    border: 2px solid #e7bc2d;
-    padding: 8px 15px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.dropdown-btn:hover {
-    transform: rotate(10deg);
-    box-shadow: 0 4px 12px rgba(231, 188, 45, 0.5);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.dropdown-content {
-    max-height: 0;
-    overflow: hidden;
-    background-color: #162c61;
+.card-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-body ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.card-body li {
+    margin-bottom: 8px;
+}
+
+.committee-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.committee-member {
+    background-color: var(--light);
+    padding: 15px;
     border-radius: 8px;
-    padding: 0 10px;
-    margin-top: 10px;
-    box-shadow: inset 0 0 10px rgba(231, 188, 45, 0.4);
-    transition: max-height 0.3s ease, padding 0.2s ease;
+    border-left: 4px solid var(--accent);
 }
 
-.dropdown-content.active {
-    max-height: 100px;
-    padding: 10px;
+.committee-member h4 {
+    color: var(--primary);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
 }
 
-/* ==========================================
-   Speaker Grid
-========================================== */
+.committee-member p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Speakers Page Styles */
 .speaker-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    max-width: 1200px;
-    margin: 3rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.speaker-card {
+    text-align: center;
+    padding: 20px;
 }
 
 .speaker-card img {
-    width: 100%;
-    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 4px solid var(--light);
+    box-shadow: var(--shadow);
+}
+
+.speaker-card h3 {
+    color: var(--primary);
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.speaker-card p {
+    color: #666;
     margin-bottom: 10px;
-    transition: transform 0.3s ease;
 }
 
-.speaker-card:hover img {
-    transform: scale(1.05);
-}
-
-/* Responsive Speaker Grid */
-@media (max-width: 992px) {
-    .speaker-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .speaker-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==========================================
-   Schedule Table
-========================================== */
+/* Schedule Page Styles */
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-}
-
-.schedule-table th, .schedule-table td {
-    border: 1px solid #e7bc2d;
-    padding: 10px;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .schedule-table th {
-    background: #162c61;
-    color: #e7bc2d;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.schedule-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--light);
 }
 
 .schedule-table tr:nth-child(even) {
-    background: rgba(255,255,255,0.05);
+    background-color: #f8f9fa;
 }
 
-/* ==========================================
-   Footer
-========================================== */
-footer {
+.schedule-table tr:hover {
+    background-color: var(--light);
+}
+
+/* Registration Page Styles */
+.registration-info {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.registration-info h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.register-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.register-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.registration-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.registration-card {
+    text-align: center;
+}
+
+/* Dropdown Styles */
+.dropdown-btn {
+    background: var(--light);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+}
+
+.dropdown-btn:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 4px solid var(--accent);
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.dropdown-content strong {
+    color: var(--primary);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure dropdown doesn't affect card layout */
+.registration-card {
+    position: relative;
+}
+
+.registration-card .dropdown-content {
+    position: static;
+    width: 100%;
+}
+
+/* Contact Page Styles */
+.contact-info {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Contact Page Specific Styles */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 10px;
     padding: 25px;
-    background-color: rgba(25, 25, 112, 0.95);
-    color: #f4f4f4;
-    border-top: 3px solid #e7bc2d;
-    margin-top: 40px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-footer .credits {
-    font-size: 0.85rem;
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-details {
+    text-align: left;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.map-container {
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, var(--light), #d1d9ff);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+}
+
+.contact-form {
+    display: grid;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    color: var(--text-light);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+.credits {
+    font-size: 0.9rem;
+    opacity: 0.8;
     margin-top: 10px;
-    color: #dcdcdc;
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    
+    .navbar {
+        flex-wrap: wrap;
+    }
+    
+    .navbar a {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .header-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .cards-container,
+    .speaker-grid,
+    .registration-cards,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-table {
+        font-size: 0.9rem;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 8px 10px;
+    }
+    
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
 }
